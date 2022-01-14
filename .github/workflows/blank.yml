@@ -37,7 +37,7 @@ jobs:
           echo ${{ steps.date.outputs.date }}
           
       - name: Save outputs to a file
-        if: hashFiles('info.md') != ''
+        if: hashFiles('info.md') == ''
         run: |
           
           git config --global user.email "test@test.com"
