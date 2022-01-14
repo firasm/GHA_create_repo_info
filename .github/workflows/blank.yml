@@ -41,3 +41,4 @@ jobs:
           echo ${{ steps.date.outputs.date }}
           
           echo "# Repository Info\n\nPlease do not edit the contents of this file.\n\nGitHub Username: ${{ github.actor }}\n\nRepository URL: ${{ github.server_url }}/${{ github.repository }}" > info.md
+          git add . ; git commit -m "Initial commit of the template repo and an info file"; git push
