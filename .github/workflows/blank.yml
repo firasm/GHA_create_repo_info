@@ -27,7 +27,7 @@ jobs:
       
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d - %H.%M.%S')"
 
       # Runs a single command using the runners shell
       - name: Print to the terminal the repo url and GH username
@@ -37,4 +37,7 @@ jobs:
           echo ${{ github.actor }}
           echo ${{ github.repository }}
           echo ${{ github.repositoryUrl }}
+          echo ${{ github.server_url }}/${{ github.repository }}
           echo ${{ steps.date.outputs.date }}
+          
+          echo "# Repository Info\n\nPlease do not edit the contents of this file.\n\nGitHub Username: ${{ github.actor }}\n\nRepository URL: ${{ github.server_url }}/${{ github.repository }}" > info.md
