@@ -36,6 +36,10 @@ jobs:
           echo ${{ github.server_url }}/${{ github.repository }}
           echo ${{ steps.date.outputs.date }}
           
+      - name: Save outputs to a file
+        if: hashFiles('info.md') != ''
+        run: |
+          
           git config --global user.email "test@test.com"
           git config --global user.name "Firas-GHClassroomBot"
           
