@@ -1,1 +1,1 @@
-# github_action
+# Test repo to generate info.md
